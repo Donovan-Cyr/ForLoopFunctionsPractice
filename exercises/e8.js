@@ -6,7 +6,20 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
-
+  const clients=[];
+  var compare = array[0];
+  for (var i = 1; i <= array.length; i++) {
+    var result = array.find(item => item.id === i);
+    if (result.balance > 0) {
+      if (result.balance > compare.balance) {
+        compare = result;
+      }
+    }
+    if (i == array.length) {
+      clients.push(compare);
+    }
+  }
+  return clients;
 }
 
 

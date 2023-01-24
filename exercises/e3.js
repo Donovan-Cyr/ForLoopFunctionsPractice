@@ -5,11 +5,13 @@
 
 export function getAverage(array) {
   // Your code goes here...
+  var numberSum = array.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+  });
 
+  var numberAverage = numberSum /= array.length;
+  return numberAverage;
 }
-
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file

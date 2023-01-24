@@ -7,7 +7,13 @@
 
 export function doesArrayInclude(array, value) {
   // Your code goes here...
-
+  var valueFound = false;
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      valueFound = true;
+    }
+  }
+  return valueFound;
 }
 
 

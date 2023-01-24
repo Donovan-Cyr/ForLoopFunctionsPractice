@@ -6,7 +6,12 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  const clients = [];
+  for (var i = 1; i <= array.length; i++) {
+    var result = array.find(item => item.id === i);
+    clients.push(result.name);
+  }
+  return clients;
 }
 
 

@@ -6,7 +6,18 @@
 
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
-
+  const clients=[];
+  for (var i = 1; i <= array.length; i++) {
+    var result = array.find(item => item.id === i);
+    if (result.hasOwnProperty('deposits') === true) {
+      for (var x = 0; x <= result.deposits.length; x++) {
+        if (result.deposits[x] > 100) {
+          clients.push(result.deposits[x]);
+        }
+      }
+    }
+  }
+  return clients;
 }
 
 

@@ -7,7 +7,27 @@
 
 export function separateNamesWithAFromRest(array) {
   // Your code goes here...
+  const aNames = [];
+  const otherNames = [];
+  const sortedNames = [];
+  for (var i = 0; i < array.length; i++) {
+    var valueFound = false;
+    var testName = array[i];
+    for (var x = 0; x < testName.length; x++) {
+      if (testName.at(x) === 'a') {
+        valueFound = true;
+      }
+    }
+    if (valueFound === true) {
+      aNames.push(array[i]);
+    } else {
+      otherNames.push(array[i]);
+    }
+  }
 
+  sortedNames.push(aNames);
+  sortedNames.push(otherNames);
+  return sortedNames;
 }
 
 
