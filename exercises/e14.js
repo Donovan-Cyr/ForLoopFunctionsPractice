@@ -8,20 +8,22 @@
 export function getClientsWithWrongBalance(array) {
   // Your code goes here...
   const clients=[];
-  for (var i = 1; i <= array.length; i++) {
-    var result = array.find(item => item.id === i);
+  for (var i = 0; i < array.length; i++) {
+    var result = array[i];
     var depositsSum = 0;
     var withdrawalsSum = 0;
 
     if (result.hasOwnProperty('deposits') === true) {
-        depositsSum = result.deposits.reduce(function(accumulator, currentValue) {
-        return accumulator + currentValue;
-      });
+      var deposits = array[i].deposits;
+      for (var x = 0; x < deposits.length; x++) {
+        depositsSum = depositsSum + deposits[x];
+      }
     }
     if (result.hasOwnProperty('withdrawals') === true) {
-        withdrawalsSum = result.withdrawals.reduce(function(accumulator, currentValue) {
-        return accumulator + currentValue;
-      });
+      var withdrawals = array[i].withdrawals;
+      for (var x = 0; x < withdrawals.length; x++) {
+        withdrawalsSum = withdrawalsSum + withdrawals[x];
+      }
     }
 
     if (depositsSum - withdrawalsSum !== result.balance) {

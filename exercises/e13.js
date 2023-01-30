@@ -7,12 +7,14 @@
 export function getAllAccountsWithSumsOfDepositsLess2000(array) {
   // Your code goes here...
   const clients=[];
-  for (var i = 1; i <= array.length; i++) {
-    var result = array.find(item => item.id === i);
+  for (var i = 0; i < array.length; i++) {
+    var result = array[i]
     if (result.hasOwnProperty('deposits') === true) {
-      var sum = result.deposits.reduce(function(accumulator, currentValue) {
-        return accumulator + currentValue;
-      });
+      var sum = 0;
+      var deposits = array[i].deposits;
+      for (var x = 0; x < deposits.length; x++) {
+        sum = sum + deposits[x];
+      }
       if ( sum < 2000) {
         clients.push(result);
       }

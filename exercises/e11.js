@@ -6,12 +6,17 @@
 export function getAllWithdrawals(array) {
   // Your code goes here...
   const clients=[];
-  for (var i = 1; i <= array.length; i++) {
-    var result = array.find(item => item.id === i);
+  for (var i = 0; i < array.length; i++) {
+    var result = array[i];
     if (result.hasOwnProperty('withdrawals') === true) {
-      var sum = result.withdrawals.reduce(function(accumulator, currentValue) {
-        return accumulator + currentValue;
-      });
+      // var sum = result.withdrawals.reduce(function(accumulator, currentValue) {
+      //   return accumulator + currentValue;
+      // });
+      var sum = 0;
+      var withdrawals = array[i].withdrawals;
+      for (var x = 0; x < withdrawals.length; x++) {
+        sum = sum + withdrawals[x];
+      }
       clients.push(sum);
     } else {
       clients.push(0);

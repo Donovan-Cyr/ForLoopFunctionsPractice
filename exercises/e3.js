@@ -5,11 +5,20 @@
 
 export function getAverage(array) {
   // Your code goes here...
-  var numberSum = array.reduce(function(accumulator, currentValue) {
-    return accumulator + currentValue;
-  });
+  // var numberSum = array.reduce(function(accumulator, currentValue) {
+  //   return accumulator + currentValue;
+  // });
 
-  var numberAverage = numberSum /= array.length;
+  // var numberAverage = numberSum /= array.length;
+  // return numberAverage;
+
+  var numberSum = 0;
+  var numberAverage = 0;
+  for (var i = 0; i < array.length; i++) {
+    numberSum = numberSum  + array[i];
+  }
+  numberAverage = numberSum /= array.length;
+
   return numberAverage;
 }
 // === TEST YOURSELF ===

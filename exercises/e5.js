@@ -7,9 +7,11 @@
 export function getAllClientNames(array) {
   // Your code goes here...
   const clients = [];
-  for (var i = 1; i <= array.length; i++) {
-    var result = array.find(item => item.id === i);
-    clients.push(result.name);
+  for (var i = 0; i < array.length; i++) {
+    // var result = array.find(item => item.id === i);
+    // var result = [];
+    // result.push(array[i].name);
+    clients.push(array[i].name);
   }
   return clients;
 }
